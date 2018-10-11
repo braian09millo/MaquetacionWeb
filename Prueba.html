@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Maquetacion</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+	<div class="menu">
+		<ul class="menu-bar">
+			<li><a href="#"><i class="fa fa-home"></i>&nbsp; Inicio</a></li>
+			<li><a href="#"><i class="fa fa-book"></i>&nbsp; Historia</a></li>
+			<li><a href="#"><i class="fa fa-address-card"></i>&nbsp; Acerca de</a></li>
+			<li><a href="#"><i class="fa fa-envelope"></i>&nbsp; Contacto</a></li>
+		</ul>
+		<div id="btn-collapse">
+			<button type="button" id="btn">
+				<span class="fa fa-bars"></span>
+			</button>
+		</div>
+	</div>
+
+	<div id="main-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-2">
+					<input type="text" class="input">
+				</div>
+				<div class="col-3">
+					<input type="text" class="input">
+				</div>	
+				<div class="col-7">
+					<input type="text" class="input">
+				</div>	
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-12">
+					<input type="text" class="input">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-6">
+					<button class="btn-default">Default</button>
+					<button class="btn-success">Success</button>
+					<button class="btn-danger">Danger</button>
+					<button class="btn-warning">Warning</button>
+					<button class="btn-primary">Primary</button>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-6">
+					<div class="alert alert-primary">
+						<p>Este es un ejemplo de una alerta</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+		
+	</div>
+
+	<script
+	  src="https://code.jquery.com/jquery-3.3.1.min.js"
+	  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	  crossorigin="anonymous">		 
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+    		$(window).on('resize', function() {
+    		    if($(this).width() > 768) {
+					$('.menu-bar').css('display', 'flex');
+    		    } else {
+					$('.menu-bar').css('display', 'none')
+				}
+    		});
+
+			$('#btn').click(function(){
+				$('.menu-bar').slideToggle(700);
+			});
+		});
+	</script>
+</body>
+</html>
