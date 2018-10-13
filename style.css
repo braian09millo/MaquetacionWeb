@@ -362,7 +362,25 @@ ul > li > a:hover {
 .panel {
 	height: auto;
 	min-height: 1px;
-	border-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
 	border: 2px solid black;
 	padding: 15px;
+}
+
+.panel-primary {
+	border-color: #337ab7;
+}
+
+.panel-heading {
+	padding: 15px 25px;
+	border-bottom: 1px solid transparent;
+	border-radius: 3px;
+	background-color: #337ab7;
+}
+
+.panel-primary > .panel-heading {
+	color: #FFFFFF;
+	background-color: #337ab7;
+	border-color: #337ab7;
 }
