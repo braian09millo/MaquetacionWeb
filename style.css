@@ -250,7 +250,7 @@ ul > li > a:hover {
 	width: 100%;
 }
 
-.btn-default {
+.btn-inverse {
 	padding: 12px 24px;
 	background-color: #FFFFFF;
 	border: 2px solid #000000;
@@ -262,8 +262,25 @@ ul > li > a:hover {
 	transition: 0.5s;
 }
 
-.btn-default:hover {
+.btn-inverse:hover {
 	background-color: #000000;
+	color: #FFFFFF;
+}
+
+.btn-default {
+	padding: 12px 24px;
+	background-color: #FFFFFF;
+	border: 2px solid rgb(70, 88, 99);;
+	color: rgb(70, 88, 99);;
+	cursor: pointer;
+	border-radius: 4px; 
+	font-size: 14px;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+
+.btn-default:hover {
+	background-color: rgb(70, 88, 99);;
 	color: #FFFFFF;
 }
 
@@ -336,8 +353,7 @@ ul > li > a:hover {
 }
 
 .alert {
-	padding: 14px 32px;
-	color: #000000;
+	padding: 14px 32px;	
 	border-radius: 4px;
 	font-size: 14px;
 	opacity: 0.8;
@@ -364,12 +380,10 @@ ul > li > a:hover {
 	min-height: 1px;
 	border-bottom-left-radius: 15px;
 	border-bottom-right-radius: 15px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 	border: 2px solid black;
 	padding: 15px;
-}
-
-.panel-primary {
-	border-color: #337ab7;
 }
 
 .panel-heading {
@@ -379,8 +393,74 @@ ul > li > a:hover {
 	background-color: #337ab7;
 }
 
+.panel-primary {
+	border-color: #337ab7;
+}
+
 .panel-primary > .panel-heading {
 	color: #FFFFFF;
 	background-color: #337ab7;
 	border-color: #337ab7;
 }
+
+.panel-danger {
+	border-color: rgb(233, 5, 5);
+}
+
+.panel-danger > .panel-heading {
+	color: #FFFFFF;
+	background-color: rgb(233, 5, 5);
+	border-color: rgb(233, 5, 5);
+}
+
+.panel-warning {
+	border-color: orangered;
+}
+
+.panel-warning > .panel-heading {
+	color: #FFFFFF;
+	background-color: orangered;
+	border-color: orangered;
+}
+
+.panel-success {
+	border-color: rgb(5, 160, 57);	
+}
+
+.panel-success > .panel-heading {
+	color: #FFFFFF;
+	background-color: rgb(5, 160, 57);
+	border-color: rgb(5, 160, 57);
+}
+
+.panel-default {
+	border-color: rgb(70, 88, 99);
+}
+
+.panel-default > .panel-heading {
+	color: #FFFFFF;
+	background-color: rgb(70, 88, 99);
+	border-color: rgb(70, 88, 99);
+}
+
+.table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 20px;
+	border-collapse: collapse;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid rgb(70, 88, 99);
+  border-right: 1px solid rgb(70, 88, 99);
+  margin: 0;
+}
+
