@@ -74,6 +74,31 @@
 			<br>
 			<div class="row">
 				<div class="col-6">
+					<div class="dropdownlist">
+						<button type="button" id="ddl1" class="btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+							Dropdown
+							<span><i aria-labelledby="ddl1" class="fa fa-chevron-down ddl-icon"></i></span>
+						</button>				
+						<ul class="ddl-menu" role="menu" aria-labelledby="ddl1">
+							<li><a href="">Action 1</a></li>
+							<li><a href="">Action 2</a></li>
+						</ul>
+					</div>
+					<div class="dropdownlist">
+						<button type="button" id="ddl2" class="btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+							Dropdown
+							<span><i aria-labelledby="ddl2" class="fa fa-chevron-down ddl-icon"></i></span>
+						</button>				
+						<ul class="ddl-menu" role="menu" aria-labelledby="ddl2">
+							<li><a href="">Action 1</a></li>
+							<li><a href="">Action 2</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<br><br>
+			<div class="row">
+				<div class="col-6">
 					<div class="alert alert-primary">
 						<p>Este es un ejemplo de una alerta</p>
 					</div>
@@ -107,23 +132,6 @@
 			</div>
 			<br><br>
 		</div>
-	</div>
-	<br><br>
-	<div class="row">
-		<div class="col-3"></div>
-		<div class="col-6">
-			<div class="dropdownlist">
-				<button type="button" class="btn-default" data-toggle="dropdown">
-					Dropdown
-					<span><i class="fa fa-chevron-down ddl-icon"></i></span>
-				</button>				
-				<ul class="ddl-menu">
-					<li><a href="">Action 1</a></li>
-					<li><a href="">Action 2</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="col-3"></div>
 	</div>
 	<br><br>
 	<div class="row">
@@ -198,20 +206,37 @@
 				$('.menu-bar').slideToggle(700);
 			});
 
-			$('.dropdownlist button').click(function() {
 
-				if (flag) {
-					$('.ddl-menu').css('display','block');
-					$('.dropdownlist > button > span > i').removeClass('fa-chevron-down');
-					$('.dropdownlist > button > span > i').addClass('fa-chevron-up');
-					flag = false;	
-				} else {
-					$('.ddl-menu').css('display','none');
-					$('.dropdownlist > button > span > i').removeClass('fa-chevron-up');
-					$('.dropdownlist > button > span > i').addClass('fa-chevron-down');
-					flag = true;
-				}				
-			});			
+			$('.dropdown-toggle').click(function () {
+    			
+    			console.log($(this).attr('aria-expanded'));
+    			console.log(this);
+			  
+				if ($(this).attr('aria-expanded') === "false") 
+				{
+				    var menuID = $(this).attr('id'),
+				    parentScope = $(this).parent().parent();
+				    parentScope.find('i[aria-labelledby=' + menuID + ']').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+				    parentScope.find('ul').removeClass('open').attr('aria-expanded', false);
+				    parentScope.find('ul[aria-labelledby=' + menuID + ']').addClass('open')
+				    parentScope.find('button[aria-expanded=true]').attr('aria-expanded', false);
+				    $(this).attr('aria-expanded', true);				    
+				} 
+				else 
+				{				   
+				    $(this).attr('aria-expanded', false);
+				    var menuID = $(this).attr('id');
+				    parentScope = $(this).parent().parent();
+
+				    $(this).siblings().each(function () {
+				    	console.log($(this).siblings());
+				      	if ($(this).attr('aria-labelledby') == menuID) {
+				        	$(this).removeClass('open');
+				        	parentScope.find('i[aria-labelledby=' + menuID + ']').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+				      	}
+				    });
+				}
+});		
 
 		});
 	</script>

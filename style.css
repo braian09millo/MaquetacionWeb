@@ -642,3 +642,11 @@ ul > li > a:hover {
 	padding-left: 3px;
 }
 
+.dropdown-toggle {
+	outline: 0;
+}
+
+.open {
+	display: block;
+}
+
