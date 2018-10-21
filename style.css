@@ -258,6 +258,102 @@ ul > li > a:hover {
 
 .btn-inverse {
 	padding: 12px 24px;
+	background-color: #000000;
+	border: 0;
+	color: #ffffff;
+	cursor: pointer;
+	border-radius: 4px; 
+	font-size: 14px;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+
+.btn-inverse:hover {
+	background-color: #000000a8;
+}
+
+.btn-default {
+	padding: 12px 24px;
+	background-color: rgb(70, 88, 99);
+	border: 0;
+	color: #ffffff;
+	cursor: pointer;
+	border-radius: 4px; 
+	font-size: 14px;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+
+.btn-default:hover {
+	background-color: rgb(49, 66, 77);
+}
+
+.btn-success {
+	padding: 12px 24px;
+	background-color: rgb(5, 160, 57);
+	border: 0;
+	color: #ffffff;
+	cursor: pointer;
+	border-radius: 4px; 
+	font-size: 14px;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+
+.btn-success:hover {
+	background-color: rgb(2, 107, 37);
+}
+
+.btn-danger {
+	padding: 12px 24px;
+	background-color: rgb(233, 5, 5);
+	border: 0;
+	color: #ffffff;
+	cursor: pointer;
+	border-radius: 4px; 
+	font-size: 14px;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+
+.btn-danger:hover {
+	background-color: rgb(218, 3, 3);
+}
+
+.btn-warning {
+	padding: 12px 24px;
+	background-color: orangered;
+	border: 0;
+	color: #ffffff;
+	cursor: pointer;
+	border-radius: 4px; 
+	font-size: 14px;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+
+.btn-warning:hover {
+	background-color: rgb(233, 63, 2);
+}
+
+.btn-primary {
+	padding: 12px 24px;
+	background-color: #337ab7;
+	border: 0;
+	color: #ffffff;
+	cursor: pointer;
+	border-radius: 4px; 
+	font-size: 14px;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+
+.btn-primary:hover {
+	background-color: #1b6eb8;
+}
+
+.btn-outline-inverse {
+	padding: 10px 24px;
 	background-color: #FFFFFF;
 	border: 2px solid #000000;
 	color: #000000;
@@ -268,13 +364,13 @@ ul > li > a:hover {
 	transition: 0.5s;
 }
 
-.btn-inverse:hover {
+.btn-outline-inverse:hover {
 	background-color: #000000;
 	color: #FFFFFF;
 }
 
-.btn-default {
-	padding: 12px 24px;
+.btn-outline-default {
+	padding: 10px 24px;
 	background-color: #FFFFFF;
 	border: 2px solid rgb(70, 88, 99);;
 	color: rgb(70, 88, 99);;
@@ -285,13 +381,13 @@ ul > li > a:hover {
 	transition: 0.5s;
 }
 
-.btn-default:hover {
+.btn-outline-default:hover {
 	background-color: rgb(70, 88, 99);;
 	color: #FFFFFF;
 }
 
-.btn-success {
-	padding: 12px 24px;
+.btn-outline-success {
+	padding: 10px 24px;
 	background-color: #FFFFFF;
 	border: 2px solid rgb(5, 160, 57);
 	color: rgb(5, 160, 57);
@@ -302,13 +398,13 @@ ul > li > a:hover {
 	transition: 0.5s;
 }
 
-.btn-success:hover {
+.btn-outline-success:hover {
 	background-color: rgb(5, 160, 57);
 	color: #FFFFFF;
 }
 
-.btn-danger {
-	padding: 12px 24px;
+.btn-outline-danger {
+	padding: 10px 24px;
 	background-color: #FFFFFF;
 	border: 2px solid rgb(233, 5, 5);
 	color: rgb(233, 5, 5);
@@ -319,13 +415,13 @@ ul > li > a:hover {
 	transition: 0.5s;
 }
 
-.btn-danger:hover {
+.btn-outline-danger:hover {
 	background-color: rgb(233, 5, 5);
 	color: #FFFFFF;
 }
 
-.btn-warning {
-	padding: 12px 24px;
+.btn-outline-warning {
+	padding: 10px 24px;
 	background-color: #FFFFFF;
 	border: 2px solid orangered;
 	color: orangered;
@@ -336,13 +432,13 @@ ul > li > a:hover {
 	transition: 0.5s;
 }
 
-.btn-warning:hover {
+.btn-outline-warning:hover {
 	background-color: orangered;
 	color: #FFFFFF;
 }
 
-.btn-primary {
-	padding: 12px 24px;
+.btn-outline-primary {
+	padding: 10px 24px;
 	background-color: #FFFFFF;
 	border: 2px solid #337ab7;
 	color: #337ab7;
@@ -353,7 +449,7 @@ ul > li > a:hover {
 	transition: 0.5s;
 }
 
-.btn-primary:hover {
+.btn-outline-primary:hover {
 	background-color: #337ab7;
 	color: #FFFFFF;
 }
@@ -610,13 +706,12 @@ ul > li > a:hover {
 	background-color: #ffffff;
 	border: 2px solid rgb(70, 88, 99);
 	border-radius: 4px;
-	margin-top:2px;
-	box-shadow: 5px 5px 5px #aaaaaa;
+	margin-top: 2px;
 	z-index: 1;
 }
 
 .ddl-menu > li {
-	padding: 10px 25px;
+	padding: 10px 15px;
 	text-decoration: none;
 	cursor: pointer;
 }
@@ -642,11 +737,6 @@ ul > li > a:hover {
 	padding-left: 3px;
 }
 
-.dropdown-toggle {
-	outline: 0;
-}
-
 .open {
 	display: block;
 }
-
