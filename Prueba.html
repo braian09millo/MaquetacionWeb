@@ -188,7 +188,22 @@
 		</div>
 		<div class="col-2"></div>
 	</div>
+	<br>
+	<div class="row">
+		<div class="col-2"></div>
+		<div class="col-8">
+			<div class="container-carousel">
+				<img class="item-carousel" src="img1.jpg" alt="imagen1">
+				<img class="item-carousel" src="img2.jpg" alt="imagen2">
+				<img class="item-carousel" src="img3.jpg" alt="imagen3">
 
+				<button onclick="plusDivs(-1);" class="carousel-button btn-carousel-left"><span class="fa fa-chevron-left"></span></button>
+				<button onclick="plusDivs(1);" class="carousel-button btn-carousel-right"><span class="fa fa-chevron-right"></span></button>
+			</div>
+		</div>
+		<div class="col-2"></div>
+	</div>
+	<br><br>
 	<div id="footer">
 		
 	</div>
@@ -241,9 +256,40 @@
 				      	}
 				    });
 				}
-});		
+			});					
 
 		});
+
+		var slideIndex = 1;
+
+		function showDivs(n) {
+
+			var i;
+			var x = document.getElementsByClassName("item-carousel");
+
+			console.log(x);
+		
+			if (n > x.length) {
+				slideIndex = 1
+			}    
+		
+			if (n < 1) {
+				slideIndex = x.length
+			}
+		
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";  
+			}
+		
+			x[slideIndex-1].style.display = "block"; 
+		}
+
+		showDivs(slideIndex);
+
+		function plusDivs(n) {
+			console.log(n);
+			showDivs(slideIndex += n);
+		}
 	</script>
 </body>
 </html>

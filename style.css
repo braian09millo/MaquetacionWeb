@@ -598,7 +598,7 @@ ul > li > a:hover {
 }
 
 .table-hover > tbody > tr:hover {
-	background-color: darkgray;
+	background-color: rgb(228, 227, 227);
 }
 
 .table-border > thead > tr > th,
@@ -740,3 +740,51 @@ ul > li > a:hover {
 .open {
 	display: block;
 }
+
+.container-carousel {
+	width: 100%;
+	height: auto;
+	border: 1px solid black;
+	padding: 10px 10px 100px 10px;
+	background-color: aliceblue;
+	box-shadow: 0 7px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.item-carousel {
+	display: none;
+	width: 100%;
+}
+
+.carousel-button {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 0;
+	cursor: pointer;
+	background-color: #555;
+	color: #ffffff;
+	opacity: .6;
+}
+
+.carousel-button:hover {
+	background-color: #ccc;
+	color: #555;
+}
+
+.container-carousel > .carousel-button {
+	position: absolute;
+}
+
+.btn-carousel-right {
+	top: 40%;
+	right: 0;
+	margin-right: 15px;
+}
+
+.btn-carousel-left {
+	top: 40%;
+	left: 0;
+	margin-left: 35px;
+}
+
+
