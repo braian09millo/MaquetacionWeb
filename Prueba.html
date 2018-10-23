@@ -193,12 +193,18 @@
 		<div class="col-2"></div>
 		<div class="col-8">
 			<div class="container-carousel">
-				<img class="item-carousel" src="img1.jpg" alt="imagen1">
-				<img class="item-carousel" src="img2.jpg" alt="imagen2">
-				<img class="item-carousel" src="img3.jpg" alt="imagen3">
+				<div class="item">
+					<img class="item-carousel" src="img1.jpg" alt="imagen1">
+				</div>
+				<div class="item">
+					<img class="item-carousel" src="img2.jpg" alt="imagen2">
+				</div>
+				<div class="item">
+					<img class="item-carousel" src="img3.jpg" alt="imagen3">				
+				</div>
 
-				<button onclick="plusDivs(-1);" class="carousel-button btn-carousel-left"><span class="fa fa-chevron-left"></span></button>
-				<button onclick="plusDivs(1);" class="carousel-button btn-carousel-right"><span class="fa fa-chevron-right"></span></button>
+				<button class="carousel-button btn-carousel-left"><span class="fa fa-chevron-left"></span></button>
+				<button class="carousel-button btn-carousel-right"><span class="fa fa-chevron-right"></span></button>
 			</div>
 		</div>
 		<div class="col-2"></div>
@@ -210,9 +216,11 @@
 
 	<script src="jquery-1.9.1.min.js"></script>
 	<script type="text/javascript">
+		
 		$(document).ready(function() {
 
 			var flag = true;
+			var index = 1;
 
     		$(window).on('resize', function() {
     		    if($(this).width() > 768) {
@@ -256,40 +264,32 @@
 				      	}
 				    });
 				}
-			});					
+			});
+
+			var showDivs = function (value) {
+
+				if(value > $('.item').length) { index = 1; }
+				if(value < 1) { index = $('.item').length; }
+				
+				$('.item').each(function() {
+					$(this).css('display','none');
+				});
+
+				$($('.item')[index - 1]).css('display','block');
+			}
+
+			showDivs(index);
+
+			$('.btn-carousel-right').click(function() {			
+				showDivs(index += 1);
+			});
+
+			$('.btn-carousel-left').click(function() {
+				showDivs(index += -1);
+			});
 
 		});
-
-		var slideIndex = 1;
-
-		function showDivs(n) {
-
-			var i;
-			var x = document.getElementsByClassName("item-carousel");
-
-			console.log(x);
-		
-			if (n > x.length) {
-				slideIndex = 1
-			}    
-		
-			if (n < 1) {
-				slideIndex = x.length
-			}
-		
-			for (i = 0; i < x.length; i++) {
-				x[i].style.display = "none";  
-			}
-		
-			x[slideIndex-1].style.display = "block"; 
-		}
-
-		showDivs(slideIndex);
-
-		function plusDivs(n) {
-			console.log(n);
-			showDivs(slideIndex += n);
-		}
+	
 	</script>
 </body>
 </html>
