@@ -82,7 +82,7 @@
 					<div class="dropdownlist">
 						<button type="button" id="ddl1" class="btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
 							Dropdown
-							<span><i aria-labelledby="ddl1" class="fa fa-chevron-down ddl-icon"></i></span>
+							<span><i aria-labelledby="ddl1" class="fa fa-caret-down ddl-icon"></i></span>
 						</button>				
 						<ul class="ddl-menu" role="menu" aria-labelledby="ddl1">
 							<li><a href="">Action 1</a></li>
@@ -92,7 +92,7 @@
 					<div class="dropdownlist">
 						<button type="button" id="ddl2" class="btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
 							Dropdown
-							<span><i aria-labelledby="ddl2" class="fa fa-chevron-down ddl-icon"></i></span>
+							<span><i aria-labelledby="ddl2" class="fa fa-caret-down ddl-icon"></i></span>
 						</button>				
 						<ul class="ddl-menu" role="menu" aria-labelledby="ddl2">
 							<li><a href="">Action 1</a></li>
@@ -192,7 +192,7 @@
 	<div class="row">
 		<div class="col-2"></div>
 		<div class="col-8">
-			<div class="container-carousel">
+			<div id="slider" class="container-carousel">
 				<div class="item">
 					<img class="item-carousel" src="img1.jpg" alt="imagen1">
 				</div>
@@ -208,6 +208,23 @@
 			</div>
 		</div>
 		<div class="col-2"></div>
+	</div>
+	<br><br>
+	<div class="row">
+		<div class="col-6">
+			<div class="info-box box-default">
+				<p class="content-box">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+				</p>
+			</div>
+		</div>
+		<div class="col-6">
+			<div class="info-box box-danger">
+				<p class="content-box">
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+				</p>
+			</div>
+		</div>
 	</div>
 	<br><br>
 	<div id="footer">
@@ -244,7 +261,6 @@
 				{
 				    var menuID = $(this).attr('id'),
 				    parentScope = $(this).parent().parent();
-				    parentScope.find('i[aria-labelledby=' + menuID + ']').removeClass('fa-chevron-down').addClass('fa-chevron-up');
 				    parentScope.find('ul').removeClass('open').attr('aria-expanded', false);
 				    parentScope.find('ul[aria-labelledby=' + menuID + ']').addClass('open')
 				    parentScope.find('button[aria-expanded=true]').attr('aria-expanded', false);
@@ -260,7 +276,6 @@
 				    	console.log($(this).siblings());
 				      	if ($(this).attr('aria-labelledby') == menuID) {
 				        	$(this).removeClass('open');
-				        	parentScope.find('i[aria-labelledby=' + menuID + ']').removeClass('fa-chevron-up').addClass('fa-chevron-down');
 				      	}
 				    });
 				}
@@ -268,14 +283,18 @@
 
 			var showDivs = function (value) {
 
-				if(value > $('.item').length) { index = 1; }
-				if(value < 1) { index = $('.item').length; }
+				var parent = $('.item').parent();
+				var sliderId = parent.attr('id'); 
+				console.log(sliderId);
+
+				if(value > $('#' + sliderId + '> .item').length) { index = 1; }
+				if(value < 1) { index = $('#' + sliderId + '> .item').length; }
 				
-				$('.item').each(function() {
+				$('#' + sliderId + '> .item').each(function() {
 					$(this).css('display','none');
 				});
 
-				$($('.item')[index - 1]).css('display','block');
+				$($('#' + sliderId + '> .item')[index - 1]).css('display','block');
 			}
 
 			showDivs(index);
