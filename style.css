@@ -131,7 +131,24 @@ ul > li > a:hover {
     transition: 0.5s;
 }
 
+.input-circle {
+	display: block;
+	width: 100%;
+	padding: 10px 15px;
+	border-radius: 50px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	outline: none;
+	font-size: 14px;
+	-webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
 .input:focus {
+	border: 2px solid #555;
+}
+
+.input-circle:focus {
 	border: 2px solid #555;
 }
 
@@ -795,7 +812,7 @@ ul > li > a:hover {
 .btn-carousel-right {
 	top: 40%;
 	right: 0;
-	margin-right: 15px;
+	margin-right: 35px;
 }
 
 .btn-carousel-left {
@@ -839,4 +856,25 @@ ul > li > a:hover {
 
 .box-success .content-box {
 	color: #fff;
+}
+
+@media only screen and (max-width: 480px) {
+
+	.carousel-button {
+		width: 35px;
+		height: 35px;
+	}
+
+	.btn-carousel-right {
+		top: 25%;
+		right: 0;
+		margin-right: 35px;
+	}
+
+	.btn-carousel-left {
+		top: 25%;
+		left: 0;
+		margin-left: 35px;
+	}
+
 }
